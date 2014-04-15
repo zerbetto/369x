@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/369x.ico">
+
+    <title>369x live test</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/369x.css" rel="stylesheet">
+
+    <script src="js/369x.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <script>
+
+    function getBusArrival(inPar)
+    {
+      document.getElementById("timeStop").innerHTML=exec369x(inPar);
+    }
+    function updateButtonLabel(inPar)
+    {
+      document.getElementById("buttonLabel").innerHTML=inPar;
+    }
+    function doubleRaibow(inPar)
+    {
+      getBusArrival(inPar);
+      inPar = (inPar == 369 ? '369' : '369.1');
+      updateButtonLabel(inPar);
+      updatePannel(inPar);
+    }
+    function updatePannel(inPar)
+    {
+      document.getElementById("panelBody").innerHTML=getTimeSheet(inPar);
+    }
+
+  </script>
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="369x-container">
+          <div class="inner 369x center" style="white-space:nowrap">
+            <font size="1"><br></font>
+              <span class="small_font">a</span>
+              <span class="large_font">que horas </span>
+              <span class="small_font">o</span>
+              <font size="1"><br></font>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default"
+                        data-toggle="dropdown">
+                    <span id="buttonLabel" data-bind="dbLabel"
+                          style="font-size:30px">369</span>
+                </button>
+                <button type="button" class="btn btn-success dropdown-toggle"
+                        data-toggle="dropdown">
+                  <span class="caret"></span>
+                  <span class="sr-only"></span>
+                </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                   <a onclick="doubleRaibow('369')"
+                   href="http://www.emdec.com.br/ABusInf/ABInfSvItiDLGoogleM.asp?CdPjOID=1805&amp;TpDiaID=0"
+                   target="iframe-map">
+                   <span class="glyphicon glyphicon-play"> 369</span>
+                   </a>
+                </li>
+                <li>
+                   <a onclick="doubleRaibow('369.1')"
+                   href="http://www.emdec.com.br/ABusInf/ABInfSvItiDLGoogleM.asp?CdPjOID=1806&amp;TpDiaID=0"
+                   target="iframe-map">
+                   <span class="glyphicon glyphicon-forward" > 369.1</span>
+                   </a>
+                </li>
+              </ul>
+            </div>
+
+              <span class="large_font"> passa </span>
+              <span class="small_font">pelo</span>
+            <font size="1"><br></font>
+              <span class="large_font">Galleria</span>
+              <span class="gigantic_font">Office?</span>
+            <font size="72"><br></font>
+            <div id="prediction">
+              <span class="glyphicon glyphicon-time custom-green"
+                    style="font-size:48px">
+              </span>
+              <span class="gigantic_font" id ="timeStop"></span>
+            </div>
+            <div class="panel panel-default" style="white-space:normal">
+              <h5 class="text-inside">Saídas do Terminal sentido Centro</h5>
+              <div id="panelBody" class="custom-green" class="panel-body">
+              </div>
+            </div>
+            <iframe name="iframe-map" class="iframe-default"
+            src="http://www.emdec.com.br/ABusInf/ABInfSvItiDLGoogleM.asp?CdPjOID=1805&amp;TpDiaID=0">Huehuehue</iframe>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script id="onLoad" type="text/javascript">
+      doubleRaibow(369);
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+  </body>
+</html>
